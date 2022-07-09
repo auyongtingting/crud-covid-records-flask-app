@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="relative overflow-x-auto shadow-md text-center sm:rounded-lg">
+        <h4 class="text-3xl font-normal leading-normal mt-0 mb-2 text-blue-800">
+            Covid Patient Records
+          </h4>
+    </div>
+        <br>
+        <a href=add_patient>
+            <button class="bg-blue-500 ml-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add Patient
+            </button>
+        </a>
+        <table class="w-full text-sm text-center text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        NRIC
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        First Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Second Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Phone Number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email Address
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Address
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    {% for record in records %}
+                        <tr>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                {{record.nric}} 
+                            </th>
+                            <td class="px-6 py-4">
+                                {{record.firstName}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{record.lastName}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{record.phoneNumber}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{record.address}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{record.emailAddress}}
+                            </td>       
+                            <td class="px-6 py-4 text-right">
+                                <a href=show_patient?nric={{record.nric}} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <a href=delete_patient?nric={{record.nric}} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+</body>
+
+<footer>
+    <!-- Developed by Au Yong Ting Ting -->
+</footer>
+</html>
