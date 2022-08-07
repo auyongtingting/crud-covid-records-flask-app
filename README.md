@@ -4,16 +4,16 @@ A simple application to explore around postgreSQL alongside CRUD functions.
 ## How to run locally
 
 1. Preparation of PostgreSQL database
-Create a database with a preferred name 
+- Create a database with a preferred name 
 
 2. Preparation of .env file 
-Ensure that you have created .env file with the following variable declared
+- Ensure that you have created .env file with the following variable declared
 
 ```
 DEV_DB='postgresql://<username>:<password>@<hostname>:<port>/<database_name>'
 ```
 
-e.g., DEV_DB='postgresql://auyongtingting:thisismypassword@localhost:5432/database-example'
+- e.g., DEV_DB='postgresql://auyongtingting:thisismypassword@localhost:5432/database-example'
 
 3. Create tables in database 
 
