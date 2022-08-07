@@ -9,9 +9,9 @@ Create a database with a preferred name
 2. Preparation of .env file 
 Ensure that you have created .env file with the following variable declared
 
-'''
+```
 DEV_DB='postgresql://<username>:<password>@<hostname>:<port>/<database_name>'
-'''
+```
 
 e.g., DEV_DB='postgresql://auyongtingting:thisismypassword@localhost:5432/database-example'
 
