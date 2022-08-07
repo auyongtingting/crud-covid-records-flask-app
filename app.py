@@ -1,9 +1,14 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, request
 import psycopg2
+import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
+print(str(os.getenv('DEV_DB')))
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:root@localhost:5432/covid-records"
+app.config["SQLALCHEMY_DATABASE_URI"] = str(os.getenv('DEV_DB'))
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= False
 db = SQLAlchemy(app)
 
